@@ -1,14 +1,19 @@
-import Alert from "./components/Alert";
+import ListGroup from "./components/ListGroup/ListGroup";
+import Like from "./components/Like";
+import { BsFillAirplaneFill } from "react-icons/bs";
+import "./App.css";
 
 function App() {
+  const items = ["New York", "Los Angeles", "San Francisco"];
+  const heading = "Cities";
+  const onSelectItem = (item: string) => {
+    console.log(item);
+  };
   return (
     <div>
-      <Alert>
-        <ul>
-          <li>Hello</li>
-          <li>World</li>
-        </ul>
-      </Alert>
+      <BsFillAirplaneFill color="red" />
+      <Like />
+      <ListGroup items={items} heading={heading} onSelectItem={onSelectItem} />
     </div>
   );
 }
